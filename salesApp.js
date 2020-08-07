@@ -235,16 +235,17 @@ locationsArray.push(lima);
 var section = document.getElementById('locations-list');
 
 for(var i = 0; i < locationsArray.length; i++){
+  console.log('running');
   var divElement = document.createElement('div');
-  section.append(divElement);
+  section.appendChild(divElement);
   var h2Element = document.createElement('h2');
   h2Element.textContent = locationsArray[i].name;
-  divElement.append(h2Element);
+  divElement.appendChild(h2Element);
 
   for(var j = 0; j < locationsArray[i].simSalesDayArray.length; j++){
     var pElement = document.createElement('p');
     pElement.textContent = locationsArray[i].simSalesDayArray[j];
-    divElement.append(pElement);
+    divElement.appendChild(pElement);
   }
 }
 
