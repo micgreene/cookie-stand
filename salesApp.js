@@ -4,7 +4,7 @@ var seattle = {
   name: 'Seattle Location',
   maxCustomers: 65,
   minCustomers: 23,
-  avgCookSale: 6.3,  
+  avgCookSale: 6.3,
   rndmCustomers: function (minCust, maxCust) {
     minCust = Math.ceil(minCust);
     maxCust = Math.floor(maxCust);
@@ -89,7 +89,7 @@ var tokyo = {
     }
     return simSalesDayArray;
   },
-  simSalesDayArray: this.simulatedSalesDay(),  
+  simSalesDayArray: this.simulatedSalesDay(),
 };
 locationsArray.push(tokyo);
 
@@ -135,7 +135,7 @@ var dubai = {
     }
     return simSalesDayArray;
   },
-  simSalesDayArray: this.simulatedSalesDay(),  
+  simSalesDayArray: this.simulatedSalesDay(),
 };
 locationsArray.push(dubai);
 
@@ -181,7 +181,7 @@ var paris = {
     }
     return simSalesDayArray;
   },
-  simSalesDayArray: this.simulatedSalesDay(),  
+  simSalesDayArray: this.simulatedSalesDay(),
 };
 locationsArray.push(paris);
 
