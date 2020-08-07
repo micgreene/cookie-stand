@@ -5,45 +5,49 @@ var seattle = {
   maxCustomers: 65,
   minCustomers: 23,
   avgCookSale: 6.3,
+  simSalesDayArray: [],
+  dailyTotal: 0,
+
   rndmCustomers: function (minCust, maxCust) {
     minCust = Math.ceil(minCust);
     maxCust = Math.floor(maxCust);
-    return Math.floor(Math.random() * (maxCust - minCust) + minCust);
+    return Math.floor(Math.random() * (maxCust - minCust + 1) + minCust);
   },
   simulatedSalesDay: function () {
-    var simSalesDayArray = [];
     var time = 6;
     var salesForHour;
 
     //the for loop runs through each hour from 6am-8pm,  calculates the simulated sales for the day, then pushes the appropriate hour and results into the simSalesDayArray
     for (var i = 1; i < 15; i++){
       //i is used to keep track of which hour of the day it is to assign the proper time, plus am/pm designation
+      var listr = '';
       if(i === 8){
         time = 1;
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}pm: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}pm: ${salesForHour} cookies`;
         time++;
       }
       else if (i < 7){
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}am: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}am: ${salesForHour} cookies`;
         time++;
       }
       else if (i === 7){
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}pm: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}pm: ${salesForHour} cookies`;
         time++;
       }
       else if (i > 8){
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}pm: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}pm: ${salesForHour} cookies`;
         time++;
       }
+      this.dailyTotal += salesForHour;
+      this.simSalesDayArray.push(listr);
     }
-    return simSalesDayArray;
   },
-  simSalesDayArray: this.simulatedSalesDay(),
 };
+seattle.simulatedSalesDay();
 locationsArray.push(seattle);
 
 
@@ -52,45 +56,49 @@ var tokyo = {
   maxCustomers: 24,
   minCustomers: 3,
   avgCookSale: 1.2,
+  simSalesDayArray: [],
+  dailyTotal: 0,
+
   rndmCustomers: function (minCust, maxCust) {
     minCust = Math.ceil(minCust);
     maxCust = Math.floor(maxCust);
-    return Math.floor(Math.random() * (maxCust - minCust) + minCust);
+    return Math.floor(Math.random() * (maxCust - minCust + 1) + minCust);
   },
   simulatedSalesDay: function () {
-    var simSalesDayArray = [];
     var time = 6;
     var salesForHour;
 
     //the for loop runs through each hour from 6am-8pm,  calculates the simulated sales for the day, then pushes the appropriate hour and results into the simSalesDayArray
     for (var i = 1; i < 15; i++){
       //i is used to keep track of which hour of the day it is to assign the proper time, plus am/pm designation
+      var listr = '';
       if(i === 8){
         time = 1;
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}pm: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}pm: ${salesForHour} cookies`;
         time++;
       }
       else if (i < 7){
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}am: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}am: ${salesForHour} cookies`;
         time++;
       }
       else if (i === 7){
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}pm: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}pm: ${salesForHour} cookies`;
         time++;
       }
       else if (i > 8){
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}pm: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}pm: ${salesForHour} cookies`;
         time++;
       }
+      this.dailyTotal += salesForHour;
+      this.simSalesDayArray.push(listr);
     }
-    return simSalesDayArray;
   },
-  simSalesDayArray: this.simulatedSalesDay(),
 };
+tokyo.simulatedSalesDay();
 locationsArray.push(tokyo);
 
 var dubai = {
@@ -98,45 +106,49 @@ var dubai = {
   maxCustomers: 38,
   minCustomers: 11,
   avgCookSale: 3.7,
+  simSalesDayArray: [],
+  dailyTotal: 0,
+
   rndmCustomers: function (minCust, maxCust) {
     minCust = Math.ceil(minCust);
     maxCust = Math.floor(maxCust);
-    return Math.floor(Math.random() * (maxCust - minCust) + minCust);
+    return Math.floor(Math.random() * (maxCust - minCust + 1) + minCust);
   },
   simulatedSalesDay: function () {
-    var simSalesDayArray = [];
     var time = 6;
     var salesForHour;
 
     //the for loop runs through each hour from 6am-8pm,  calculates the simulated sales for the day, then pushes the appropriate hour and results into the simSalesDayArray
     for (var i = 1; i < 15; i++){
       //i is used to keep track of which hour of the day it is to assign the proper time, plus am/pm designation
+      var listr = '';
       if(i === 8){
         time = 1;
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}pm: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}pm: ${salesForHour} cookies`;
         time++;
       }
       else if (i < 7){
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}am: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}am: ${salesForHour} cookies`;
         time++;
       }
       else if (i === 7){
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}pm: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}pm: ${salesForHour} cookies`;
         time++;
       }
       else if (i > 8){
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}pm: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}pm: ${salesForHour} cookies`;
         time++;
       }
+      this.dailyTotal += salesForHour;
+      this.simSalesDayArray.push(listr);
     }
-    return simSalesDayArray;
   },
-  simSalesDayArray: this.simulatedSalesDay(),
 };
+dubai.simulatedSalesDay();
 locationsArray.push(dubai);
 
 var paris = {
@@ -144,91 +156,99 @@ var paris = {
   maxCustomers: 38,
   minCustomers: 20,
   avgCookSale: 2.3,
+  simSalesDayArray: [],
+  dailyTotal: 0,
+
   rndmCustomers: function (minCust, maxCust) {
     minCust = Math.ceil(minCust);
     maxCust = Math.floor(maxCust);
-    return Math.floor(Math.random() * (maxCust - minCust) + minCust);
+    return Math.floor(Math.random() * (maxCust - minCust + 1) + minCust);
   },
   simulatedSalesDay: function () {
-    var simSalesDayArray = [];
     var time = 6;
     var salesForHour;
 
     //the for loop runs through each hour from 6am-8pm,  calculates the simulated sales for the day, then pushes the appropriate hour and results into the simSalesDayArray
     for (var i = 1; i < 15; i++){
       //i is used to keep track of which hour of the day it is to assign the proper time, plus am/pm designation
+      var listr = '';
       if(i === 8){
         time = 1;
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}pm: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}pm: ${salesForHour} cookies`;
         time++;
       }
       else if (i < 7){
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}am: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}am: ${salesForHour} cookies`;
         time++;
       }
       else if (i === 7){
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}pm: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}pm: ${salesForHour} cookies`;
         time++;
       }
       else if (i > 8){
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}pm: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}pm: ${salesForHour} cookies`;
         time++;
       }
+      this.dailyTotal += salesForHour;
+      this.simSalesDayArray.push(listr);
     }
-    return simSalesDayArray;
   },
-  simSalesDayArray: this.simulatedSalesDay(),
 };
+paris.simulatedSalesDay();
 locationsArray.push(paris);
 
 var lima = {
-  name: 'Seattle Location',
+  name: 'Lima Location',
   maxCustomers: 16,
   minCustomers: 2,
   avgCookSale: 4.6,
+  simSalesDayArray: [],
+  dailyTotal: 0,
+
   rndmCustomers: function (minCust, maxCust) {
     minCust = Math.ceil(minCust);
     maxCust = Math.floor(maxCust);
-    return Math.floor(Math.random() * (maxCust - minCust) + minCust);
+    return Math.floor(Math.random() * (maxCust - minCust + 1) + minCust);
   },
   simulatedSalesDay: function () {
-    var simSalesDayArray = [];
     var time = 6;
     var salesForHour;
 
     //the for loop runs through each hour from 6am-8pm,  calculates the simulated sales for the day, then pushes the appropriate hour and results into the simSalesDayArray
     for (var i = 1; i < 15; i++){
       //i is used to keep track of which hour of the day it is to assign the proper time, plus am/pm designation
+      var listr = '';
       if(i === 8){
         time = 1;
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}pm: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}pm: ${salesForHour} cookies`;
         time++;
       }
       else if (i < 7){
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}am: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}am: ${salesForHour} cookies`;
         time++;
       }
       else if (i === 7){
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}pm: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}pm: ${salesForHour} cookies`;
         time++;
       }
       else if (i > 8){
-        salesForHour = this.rndmCustomers * this.avgCookSale;
-        simSalesDayArray.push(`${time}pm: ${salesForHour} cookies`);
+        salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers,this.maxCustomers) * this.avgCookSale);
+        listr = `${time}pm: ${salesForHour} cookies`;
         time++;
       }
+      this.dailyTotal += salesForHour;
+      this.simSalesDayArray.push(listr);
     }
-    return simSalesDayArray;
   },
-  simSalesDayArray: this.simulatedSalesDay(),
 };
+lima.simulatedSalesDay();
 locationsArray.push(lima);
 
 
@@ -241,11 +261,13 @@ for(var i = 0; i < locationsArray.length; i++){
   var h2Element = document.createElement('h2');
   h2Element.textContent = locationsArray[i].name;
   divElement.appendChild(h2Element);
+  var ulElement = document.createElement('ul');
+  divElement.appendChild(ulElement);
 
   for(var j = 0; j < locationsArray[i].simSalesDayArray.length; j++){
-    var pElement = document.createElement('p');
-    pElement.textContent = locationsArray[i].simSalesDayArray[j];
-    divElement.appendChild(pElement);
+    var liElement = document.createElement('li');
+    liElement.textContent = locationsArray[i].simSalesDayArray[j];
+    ulElement.appendChild(liElement);
   }
 }
 
