@@ -3,10 +3,9 @@ th{
 }
 
 td{
-  background-color: blue;
+  background-color: lightblue;
 }
 
-tabel{
-  margin-bottom: 100px;
+table{
   border-spacing: 10px;
 }
