@@ -2,14 +2,25 @@
 <html>
   <head>
     <title>Pat's Cookies: Simulated Weekly Sales Data</title>
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
   </head>
 
+  
   <body>
     <header>
-      <h1>Weekly Simulated Sales Data for All Pat's Cookies Locations</h1>
+      <nav>        
+        <img src="img/chinook.jpg" width="200px" height="70px" alt="logo" title="logo">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="sales.html">Sales Data</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+      </nav>      
     </header>
-
+    <main>
+      <h1>Weekly Simulated Sales Data</h1>
     <table>
       <thead>
         <th>
@@ -23,12 +34,14 @@
         </tr>
       </tbody>
     </table>
-
     <table id="locations-list">
     </table>
-
+  </main>
     <!-- <section id="locations-list">
     </section> -->
     <script src="salesApp.js"></script>
   </body>
+  <footer>
+    <p>&copy; Copyright 2020 Pat's Salmon Cookies Intl., a subsidiary of the &copy; Krusty Krab Inc.</p>
+  </footer>
 </html>

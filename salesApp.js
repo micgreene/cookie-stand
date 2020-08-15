@@ -88,19 +88,19 @@ NewLocation.prototype.pushSalesToTable = function () {
 };
 
 //create all store locations as new objects and invokes their sales simulation functions, then pushes everything to the table
-var seattle = new NewLocation('Seattle Location', 65, 23, 6.3);
+var seattle = new NewLocation('Seattle', 65, 23, 6.3);
 seattle.simulatedSalesDay();
 
-var tokyo = new NewLocation('Tokyo Location', 24, 3, 1.2);
+var tokyo = new NewLocation('Tokyo', 24, 3, 1.2);
 tokyo.simulatedSalesDay();
 
-var dubai = new NewLocation('Dubai Location', 38, 11, 3.7);
+var dubai = new NewLocation('Dubai', 38, 11, 3.7);
 dubai.simulatedSalesDay();
 
-var paris = new NewLocation('Paris Location', 38, 20, 2.3);
+var paris = new NewLocation('Paris', 38, 20, 2.3);
 paris.simulatedSalesDay();
 
-var lima = new NewLocation('Lima Location', 16, 2, 4.6);
+var lima = new NewLocation('Lima', 16, 2, 4.6);
 lima.simulatedSalesDay();
 
 seattle.pushSalesToTable();
