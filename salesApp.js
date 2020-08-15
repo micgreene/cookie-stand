@@ -132,3 +132,4 @@ function createTableFooter() {
 }
 //invoke function to create HTML table footer
 createTableFooter();
+
