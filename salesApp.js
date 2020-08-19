@@ -3,6 +3,47 @@ var locationsArray = [];
 var hoursArray = ['6:00 am', '7:00 am', '8:00 am', '9:00 am', '10:00 am', '11:00 am', '12:00 pm', '1:00 pm', '2:00 pm', '3:00 pm', '4:00 pm', '5:00 pm', '6:00 pm', '7:00 pm'];
 var hourlyTotalsArray = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 var dailyTotalAllLocations = 0;
+var tableFooter = document.createElement('tfoot');
+
+
+//user input form logic for new store locations
+var newStoreContainer = document.getElementById('newStoreContainer');
+
+function addNewStoreToTable(event) {
+  //prevents submitted info from disappearing
+  event.preventDefault();
+
+  //creates a var containing the new store location the user entered in lowercase form to check for duplicates in the 'locationsarray' object
+  var newLocationName = event.target.name.value;
+  newLocationName = newLocationName.toLowerCase();
+  var duplicateValue = false;
+  //searche the array for duplicate names using the lowercase version of the store locations contained in the object literals
+  for (var j = 0; j < locationsArray.length; j++) {
+    if (newLocationName !== locationsArray[j]. nameLowercase) {
+      //if no duplicate is found, then report it as false....
+      duplicateValue = false;
+    }
+    else if (newLocationName === locationsArray[j].nameLowercase){
+      //....if so, then change this variabe to true
+      duplicateValue = true;
+    }
+  }
+  //if no duplicate is found, finish rendering the new store to the table...
+  if (duplicateValue === false) {
+    var newLoc = new NewLocation(event.target.name.value, event.target.maxCustomers.value, event.target.minCustomers.value, event.target.avgCookSale.value);
+    newLoc.simulatedSalesDay();
+    newLoc.pushSalesToTable();
+    tableFooter.innerHTML = '';
+    createTableFooter();
+  }
+  //...if so, then alert the user that this has occured instead of rendering new table
+  else {
+    alert('Warning: Duplicate Information Entered! Please only click "Submit" just ONCE!');
+  }
+}
+newStoreContainer.addEventListener('submit', addNewStoreToTable);
+
+
 
 //first function creates the table header element
 function createTableHeader() {
@@ -33,6 +74,8 @@ createTableHeader();
 //constructor for store location objects
 function NewLocation(name, maxCustomers, minCustomers, avgCookSale) {
   this.name = name;
+  //this all lowercase var is created to give each store object a name that can be compared against new stores attempting to be made by the user to prevent duplicates
+  this.nameLowercase = this.name.toLowerCase();
   this.maxCustomers = maxCustomers;
   this.minCustomers = minCustomers;
   this.avgCookSale = avgCookSale;
@@ -50,14 +93,21 @@ NewLocation.prototype.simulatedSalesDay = function () {
   var salesForHour;
   //the for loop runs through each hour from 6am-8pm,  calculates the simulated sales for the day, then pushes the appropriate hour and results into the simSalesDayArray
   for (var i = 0; i < hoursArray.length; i++) {
-    //i is used to keep track of which hour of the day it is to assign the proper time, plus am/pm designation
+    //i is used to keep track of which hour of the day it is to assign the proper time
+    //--------------------------------//
+    //listr is created as an empty string
     var listr = '';
+    //an estimate of the sales for the hour is calculated
     salesForHour = Math.ceil(this.rndmCustomers(this.minCustomers, this.maxCustomers) * this.avgCookSale);
+    //the dailytotal of all stores is then updated,
     this.dailyTotal += salesForHour;
+    //then listr receives the string value of the total
     listr = `${salesForHour}`;
+    //the old total is stored so it can be added to the new total
     var oldSalesForHour;
     oldSalesForHour = hourlyTotalsArray[i];
     salesForHour = salesForHour + oldSalesForHour;
+    //and finally the current hour (i) is updated then both the global sales total array and the object's sales day array are updated
     hourlyTotalsArray[i] = salesForHour;
     this.simSalesDayArray.push(listr);
   }
@@ -90,19 +140,16 @@ NewLocation.prototype.pushSalesToTable = function () {
 //create all store locations as new objects and invokes their sales simulation functions, then pushes everything to the table
 var seattle = new NewLocation('Seattle', 65, 23, 6.3);
 seattle.simulatedSalesDay();
-
 var tokyo = new NewLocation('Tokyo', 24, 3, 1.2);
 tokyo.simulatedSalesDay();
-
 var dubai = new NewLocation('Dubai', 38, 11, 3.7);
 dubai.simulatedSalesDay();
-
 var paris = new NewLocation('Paris', 38, 20, 2.3);
 paris.simulatedSalesDay();
-
 var lima = new NewLocation('Lima', 16, 2, 4.6);
 lima.simulatedSalesDay();
 
+//pushes all weekly sales info to the html table
 seattle.pushSalesToTable();
 tokyo.pushSalesToTable();
 dubai.pushSalesToTable();
@@ -112,10 +159,11 @@ lima.pushSalesToTable();
 //creates the footer row of the table, creating all HTML elements then assigning all our array information to them
 function createTableFooter() {
   var table = document.getElementById('locations-list');
-  var tableFooter = document.createElement('tfoot');
   table.appendChild(tableFooter);
   var tableRow = document.createElement('tr');
+  tableRow.id = 'totalsRow';
   tableFooter.appendChild(tableRow);
+  tableRow.innerHTML - '';
   var thCell = document.createElement('th');
   thCell.textContent = 'Hourly Totals';
   tableRow.appendChild(thCell);
@@ -132,4 +180,3 @@ function createTableFooter() {
 }
 //invoke function to create HTML table footer
 createTableFooter();
-

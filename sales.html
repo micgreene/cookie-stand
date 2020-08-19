@@ -1,47 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Pat's Cookies: Simulated Weekly Sales Data</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-  </head>
 
-  
-  <body>
-    <header>
-      <nav>        
-        <img src="img/chinook.jpg" width="200px" height="70px" alt="logo" title="logo">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="#">Shop</a></li>
-            <li><a href="sales.html">Sales Data</a></li>
-            <li><a href="#">About Us</a></li>
-          </ul>
-      </nav>      
-    </header>
-    <main>
-      <h1>Weekly Simulated Sales Data</h1>
-    <table>
-      <thead>
-        <th>
-          <td></td>
-        </th>
-      </thead>
+<head>
+  <title>Pat's Cookies: Simulated Weekly Sales Data</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
 
-      <tbody>
-        <tr>
-          <td></td>
-        </tr>
-      </tbody>
+
+<body>
+  <header>
+    <nav>
+      <img src="img/chinook.jpg" width="200px" height="70px" alt="logo" title="logo">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="sales.html">Sales Data</a></li>
+        <li><a href="#">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Weekly Simulated Sales Data</h1>
+    <form id="newStoreContainer">
+      <fieldset>
+        <legend><h3>Enter a New Store Location</h3></legend>
+        <br>
+        <label for="name">Enter New Location's City:</label>
+        <input type="text" name="name">
+        
+        <label for="maxCust">Enter New Location's Maximum Amount of Customers (in an hour) on Any Given Day:</label>
+        <input type="number" name="maxCustomers">
+        
+        <label for="maxCust">Enter New Location's Minimum Amount of Customers (in an hour) on Any Given Day:</label>
+        <input type="number" name="minCustomers">
+        
+        <label for="maxCust">Enter New Location's Average Cookie Sales per Hour:</label>
+        <input type="float" name="avgCookSale">
+        
+        <button type="submit">Submit</button>
+      </fieldset>
+    </form>
+
+    <tbody>
+      <tr>
+        <td></td>
+      </tr>
+    </tbody>
     </table>
     <table id="locations-list">
     </table>
   </main>
-    <!-- <section id="locations-list">
+  <!-- <section id="locations-list">
     </section> -->
-    <script src="salesApp.js"></script>
-  </body>
-  <footer>
-    <p>&copy; Copyright 2020 Pat's Salmon Cookies Intl., a subsidiary of the &copy; Krusty Krab Inc.</p>
-  </footer>
+  <script src="salesApp.js"></script>
+</body>
+<footer>
+  <p>&copy; Copyright 2020 Pat's Salmon Cookies Intl., a subsidiary of the &copy; Krusty Krab Inc.</p>
+</footer>
+
 </html>

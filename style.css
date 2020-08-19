@@ -63,9 +63,20 @@ body{
 }
 
 /*main stylins*/
+form{
+  border: 3px solid lightgreen;
+  padding: 20px;
+}
+
+input{
+  display: block;
+  margin-bottom: 25px;
+}
+
 main{
   width: 960px;
   margin: auto;
+  padding-bottom: 40px;
 }
 
 main img{
@@ -126,7 +137,7 @@ main h2{
 main h3{
   font-size:35px;
   font-weight: bold;
-  margin-left: 30px;
+  text-align: center;
   color: darkgreen;
 }
 
