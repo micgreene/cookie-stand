@@ -5,6 +5,8 @@
   <title>Pat's Salmon Cookies</title>
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
+  <!--Referencing a Google font, 'Pacifico' for the top logo text-->
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -21,14 +23,14 @@
     </nav>
   </header>
   <!--Begin of Main Page-->
-  <main>
-    <h1>Welcome to Pat's Salmon Cookies</h1>
-    <img src="img/salmon.png" width="960px" height="450px" alt="hero" title="hero">
+  <main id="indexMain">
+    <h1 id="titleText">Pat's<br>Salmon Cookies</h1>
+    <img class="mainPic" src="img/salmon.png" width="960px" height="450px" alt="hero" title="hero">
     <hr />
     <!--Introduction Section-->
     <section>
-      <img src="img/frosted-cookie.jpg" width="480px" height="420px" alt="section" title="section">
-      <article>
+      <img class="frostCook" src="img/frosted-cookie.jpg" width="480px" height="442px" alt="section" title="section">
+      <article id="mainTitleText">
         <h3>Our Unique Flavor</h3>
         <p>"Since 2020, Pat's Salmon Cookies have been bringing you the unique taste of the PNW worldwide. In every bite
           of our light, cakey cookies is just a -hint- of freshly caught chinook salmon. Great for a tasty snack,
@@ -108,41 +110,51 @@
           est laborum."
         </p>
       </article>
-      <h2>Find a Pat's Near You!</h2>
-      <p>
-        Seattle Location:
-        <br>
-        85 Pike St, Seattle, WA 98101
-        <br>
-        <br>
-        Tokyo Location:
-        <br>
-        4 Chome-2-8 Shibakoen, Minato City, Tokyo 105-0011, Japan
-        <br>
-        <br>
-        Paris Location:
-        <br>
-        Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France
-        <br>
-        <br>
-        Dubai Location:
-        <br>
-        1 Sheikh Mohammed bin Rashid Blvd - Downtown Dubai - Dubai - United Arab Emirates
-        <br>
-        <br>
-        Lima Location:
-        <br>
-        Jirón Carabaya, Cercado de Lima 15001, Peru
-      </p>
+
+      <hr />
+
+      <div id="storeLocationsText">
+        <h2>Find a Pat's Near You!</h2>
+        <p>
+          We're open Monday-Saturdays WORLDWIDE
+          <br>
+          6am - 8pm!
+          <br>
+          <br>
+          Seattle Location:
+          <br>
+          85 Pike St, Seattle, WA 98101
+          <br>
+          <br>
+          Tokyo Location:
+          <br>
+          4 Chome-2-8 Shibakoen, Minato City, Tokyo 105-0011, Japan
+          <br>
+          <br>
+          Paris Location:
+          <br>
+          Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France
+          <br>
+          <br>
+          Dubai Location:
+          <br>
+          1 Sheikh Mohammed bin Rashid Blvd - Downtown Dubai - Dubai - United Arab Emirates
+          <br>
+          <br>
+          Lima Location:
+          <br>
+          Jirón Carabaya, Cercado de Lima 15001, Peru
+        </p>
+      </div>
     </section>
     <!--Recipe Section-->
     <hr />
     <h2>Fun Recipes for Home</h2>
-    <img src="img/family.jpg" alt="hero" title="hero">
+    <img class="familyPic" src="img/family.jpg" width="960px" alt="hero" title="hero">
     <section>
-      <img src="img/cutter.jpeg" width="480px" height="420px" alt="sub-banner" title="sub-banner">
+      <img class="cookCutPic" src="img/cutter.jpeg" width="480px" height="442px" alt="sub-banner" title="sub-banner">
 
-      <article>
+      <article id="recipeText">
         <h3>Salmon Cookies Recipe:</h3>
         <p>"Want to try the closest thing to Pat's from the comfort of your own home? Get the family together for this
           great recipe. We recommend grabbing a set of salmon-shaped cookie cutters to complete the experience!"
@@ -178,7 +190,7 @@
     </section>
     <!--Shop Section-->
     <hr />
-    <section>
+    <section id="storeText">
       <h2>Need Salmon Swag?</h2>
 
       <ul>
@@ -190,6 +202,13 @@
         </li>
       </ul>
       <p>"Check out our <a href="#">Salmon Shop</a> for sweet gear from Pat's!"
+        <br>
+        <br>
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+        est laborum."
       </p>
     </section>
   </main>
